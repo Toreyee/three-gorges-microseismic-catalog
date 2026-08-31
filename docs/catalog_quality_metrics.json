@@ -1,0 +1,83 @@
+{
+  "generated_at_utc": "2026-08-31T02:24:28+00:00",
+  "manuscript_catalog": {
+    "path": "data/final/final_catalog_6344.loc.txt",
+    "rows": 6344,
+    "columns": 18,
+    "sha256": "87f4b7105ef56e0cbfedca12b43d3a8ed9ae28fba8d33d36799e58feb971fb12",
+    "chronologically_sorted": true,
+    "time_min": "2018-01-01 00:22:11.980000",
+    "time_max": "2018-12-31 23:35:35.200000",
+    "finite_magnitude_rows": 0,
+    "nonfinite_magnitude_rows": 6344,
+    "zero_formal_error_values": 19032
+  },
+  "official_catalog": {
+    "path": "data/reference/official_catalog_2018.txt",
+    "rows": 632,
+    "sha256": "cda58f5a0e6565a32e8ab59d34a84cb93ac1fbe320707ca8688a955441f5c9ca"
+  },
+  "category_counts": {
+    "EE": 395,
+    "EL": 81,
+    "ER": 391,
+    "ERL": 206,
+    "ERU": 247,
+    "ERUL": 3867,
+    "EU": 141,
+    "EUL": 211,
+    "LL": 120,
+    "RL": 38,
+    "RR": 298,
+    "RU": 43,
+    "RUL": 64,
+    "UL": 90,
+    "UU": 152
+  },
+  "category_sum": 6344,
+  "per_model_hypodd_rows": {
+    "EQT": {
+      "loc_rows": 5620,
+      "reloc_rows": 4517
+    },
+    "RNN": {
+      "loc_rows": 5232,
+      "reloc_rows": 4298
+    },
+    "Unet": {
+      "loc_rows": 4908,
+      "reloc_rows": 3907
+    },
+    "lppnl": {
+      "loc_rows": 4777,
+      "reloc_rows": 3912
+    }
+  },
+  "ratio_to_official": 10.037974683544304,
+  "structural_checks": {
+    "final_rows_6344": true,
+    "official_rows_632": true,
+    "category_count_15": true,
+    "category_sum_6344": true,
+    "final_sha256": true
+  },
+  "all_structural_checks_pass": true,
+  "findings": [
+    {
+      "severity": "high",
+      "issue": "Fold comparison must match the retained manuscript catalog.",
+      "evidence": "6344/632=10.0380",
+      "remediation": "If 6,344 is retained, report approximately 10 times as many events as the 632-event reference catalog, or omit the fold statement."
+    },
+    {
+      "severity": "medium",
+      "issue": "The manuscript release product is in hypoDD.loc format.",
+      "remediation": "Describe it as the integrated manuscript catalog/hypoDD-stage integrated catalog, not as a combined hypoDD.reloc catalog."
+    },
+    {
+      "severity": "medium",
+      "issue": "Historical category-generation code is incomplete.",
+      "remediation": "State that the 15 archived partitions are preserved and exactly reassemble to the 6,344-event final product; do not claim from-scratch regeneration of category assignments."
+    }
+  ]
+}

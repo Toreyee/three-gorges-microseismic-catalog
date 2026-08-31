@@ -1,0 +1,171 @@
+{
+  "catalog_mode": "manuscript",
+  "requested": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "figures": {
+    "2": {
+      "status": "ok",
+      "files": {
+        "pdf": {
+          "generated_sha256": "FD3D8A36AB3B0A38B4495DAC79954ED66452DE41F2038C75BC89ABBE11DCFFF4",
+          "comparison": {
+            "reference": "Figure2_workflow.pdf",
+            "reference_exists": false,
+            "generated_sha256": "FD3D8A36AB3B0A38B4495DAC79954ED66452DE41F2038C75BC89ABBE11DCFFF4"
+          },
+          "output": "figures/output/Figure2_workflow.pdf"
+        },
+        "png": {
+          "generated_sha256": "C79D14E551F6F6A41DBE7723BEB1F0429B7292959C77BEF45F53A2A95743DF4A",
+          "comparison": {
+            "reference": "Figure2_workflow.png",
+            "reference_exists": false,
+            "generated_sha256": "C79D14E551F6F6A41DBE7723BEB1F0429B7292959C77BEF45F53A2A95743DF4A"
+          },
+          "output": "figures/output/Figure2_workflow.png"
+        }
+      }
+    },
+    "3": {
+      "status": "ok",
+      "files": {
+        "pdf": {
+          "generated_sha256": "3A850F83CDBF5611267A1FE1F640C5BDEEFD36B02CDCE6CBC64AE8D950DE74B8",
+          "comparison": {
+            "reference": "Figure3_transfer_learning_performance.pdf",
+            "reference_exists": false,
+            "generated_sha256": "3A850F83CDBF5611267A1FE1F640C5BDEEFD36B02CDCE6CBC64AE8D950DE74B8"
+          },
+          "output": "figures/output/Figure3_transfer_learning_performance.pdf"
+        },
+        "png": {
+          "generated_sha256": "1337229856537EC18A64BDABCA8FF443D4BB1D49C25FF0F66A5E6109A6952BE0",
+          "comparison": {
+            "reference": "Figure3_transfer_learning_performance.png",
+            "reference_exists": false,
+            "generated_sha256": "1337229856537EC18A64BDABCA8FF443D4BB1D49C25FF0F66A5E6109A6952BE0"
+          },
+          "output": "figures/output/Figure3_transfer_learning_performance.png"
+        }
+      }
+    },
+    "4": {
+      "status": "ok",
+      "files": {
+        "pdf": {
+          "generated_sha256": "92296A67ADFC22F9F10342D56B7BDB0C534C29332DC1F2E6D5661D21BA15369F",
+          "comparison": {
+            "reference": "Figure4_catalog_reduction_residual_improvement.pdf",
+            "reference_exists": false,
+            "generated_sha256": "92296A67ADFC22F9F10342D56B7BDB0C534C29332DC1F2E6D5661D21BA15369F"
+          },
+          "output": "figures/output/Figure4_catalog_reduction_residual_improvement.pdf"
+        },
+        "png": {
+          "generated_sha256": "F349729E9B893EB149A25CB9BBB4C78070BC78470B9471F655B6D41D8DB1A7A8",
+          "comparison": {
+            "reference": "Figure4_catalog_reduction_residual_improvement.png",
+            "reference_exists": false,
+            "generated_sha256": "F349729E9B893EB149A25CB9BBB4C78070BC78470B9471F655B6D41D8DB1A7A8"
+          },
+          "output": "figures/output/Figure4_catalog_reduction_residual_improvement.png"
+        }
+      }
+    },
+    "5": {
+      "status": "ok",
+      "files": {
+        "pdf": {
+          "generated_sha256": "A15CDA5D1000B3F33DB3C0408EDA79E9B772ABC10C24CF4098F4DF722CFE3048",
+          "comparison": {
+            "reference": "Figure5_time_distribution_water_level.pdf",
+            "reference_exists": true,
+            "generated_sha256": "A15CDA5D1000B3F33DB3C0408EDA79E9B772ABC10C24CF4098F4DF722CFE3048",
+            "reference_sha256": "6B42E98B1ED29C906C010F53858BDE5CDE6148ED81C0A63C5903C086C185D5C8",
+            "sha256_exact": false
+          },
+          "output": "figures/output/Figure5_time_distribution_water_level.pdf"
+        },
+        "png": {
+          "generated_sha256": "0EDF37BF332F7AABCC6CDD9AA1E889843001CB8906B5C493BECA40BD70C9D95C",
+          "comparison": {
+            "reference": "Figure5_time_distribution_water_level.png",
+            "reference_exists": true,
+            "generated_sha256": "0EDF37BF332F7AABCC6CDD9AA1E889843001CB8906B5C493BECA40BD70C9D95C",
+            "reference_sha256": "0EDF37BF332F7AABCC6CDD9AA1E889843001CB8906B5C493BECA40BD70C9D95C",
+            "sha256_exact": true,
+            "image_comparison": {
+              "method": "pixels",
+              "exact": true,
+              "size": [
+                4248,
+                2352
+              ],
+              "difference_bbox": null
+            }
+          },
+          "output": "figures/output/Figure5_time_distribution_water_level.png"
+        }
+      }
+    },
+    "6": {
+      "status": "skipped",
+      "files": {},
+      "reason": "GMT is required for Figure 6"
+    },
+    "7": {
+      "status": "ok",
+      "files": {
+        "pdf": {
+          "generated_sha256": "A5FF9869BD6CE3D738C0BF75B5C5BC6E21864F125815A65AE6A90E9ADD89E97B",
+          "comparison": {
+            "reference": "Figure7_EQT_magnitude_frequency_distribution.pdf",
+            "reference_exists": false,
+            "generated_sha256": "A5FF9869BD6CE3D738C0BF75B5C5BC6E21864F125815A65AE6A90E9ADD89E97B"
+          },
+          "output": "figures/output/Figure7_EQT_magnitude_frequency_distribution.pdf"
+        },
+        "png": {
+          "generated_sha256": "189F6C6ABB7666394D06DA2F4A4B15968E500F1CF6AC877EE8EE79156D2CF2D2",
+          "comparison": {
+            "reference": "Figure7_EQT_magnitude_frequency_distribution.png",
+            "reference_exists": false,
+            "generated_sha256": "189F6C6ABB7666394D06DA2F4A4B15968E500F1CF6AC877EE8EE79156D2CF2D2"
+          },
+          "output": "figures/output/Figure7_EQT_magnitude_frequency_distribution.png"
+        }
+      }
+    },
+    "8": {
+      "status": "ok",
+      "files": {
+        "pdf": {
+          "generated_sha256": "A4CAB37D84AC27109B226256322A29B48505C659AEEE99F21878FC292A933FC9",
+          "comparison": {
+            "reference": "Figure8_model_comparison.pdf",
+            "reference_exists": false,
+            "generated_sha256": "A4CAB37D84AC27109B226256322A29B48505C659AEEE99F21878FC292A933FC9"
+          },
+          "output": "figures/output/Figure8_model_comparison.pdf"
+        },
+        "png": {
+          "generated_sha256": "454B2BF1DC6546E0981B9F9783D9224CABDAF0900661D241BE6EBC4373603A5D",
+          "comparison": {
+            "reference": "Figure8_model_comparison.png",
+            "reference_exists": false,
+            "generated_sha256": "454B2BF1DC6546E0981B9F9783D9224CABDAF0900661D241BE6EBC4373603A5D"
+          },
+          "output": "figures/output/Figure8_model_comparison.png"
+        }
+      }
+    }
+  },
+  "all_requested_reproduced": false
+}

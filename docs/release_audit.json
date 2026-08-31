@@ -1,0 +1,20 @@
+{
+  "file_count": 167,
+  "cache_artifacts": [],
+  "github_oversize_files": [],
+  "secret_pattern_hits": [],
+  "machine_path_hits": [
+    {
+      "path": "third_party/csnbench/utils/merge.py",
+      "line": 55,
+      "pattern": "linux_home",
+      "allowed_context": true
+    }
+  ],
+  "blocking_machine_path_hits": [],
+  "all_blocking_checks_pass": true,
+  "notes": [
+    "Comments in the pinned third_party snapshot may contain upstream machine paths and are recorded but not treated as project blockers.",
+    "This is a pattern-based audit, not a substitute for repository-owner review or a dedicated secret scanner before publication."
+  ]
+}

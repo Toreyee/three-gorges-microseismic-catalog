@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "three-gorges-microseismic-catalog"
+version = "0.3.0"
+description = "Reproducibility package for a 2018 Three Gorges Reservoir microseismic catalog"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "GPL-3.0-only"}
+authors = [
+  {name = "Xiaohan Li"},
+  {name = "Tao He"},
+]
+dependencies = [
+  "numpy==1.26.4",
+  "obspy==1.4.2",
+  "pandas==2.2.3",
+  "tqdm==4.67.1",
+]
+
+[project.optional-dependencies]
+inference = ["torch==2.5.1"]
+figures = ["matplotlib==3.9.4", "pillow==11.1.0"]
+analysis = ["matplotlib==3.9.4", "pillow==11.1.0", "jupyterlab==4.3.5", "nbclient==0.10.2", "nbformat==5.10.4"]
+test = ["pytest==8.3.5"]
+notebook = ["jupyterlab==4.3.5", "nbclient==0.10.2", "nbformat==5.10.4"]
+all = [
+  "torch==2.5.1",
+  "matplotlib==3.9.4",
+  "pillow==11.1.0",
+  "pytest==8.3.5",
+  "jupyterlab==4.3.5",
+  "nbclient==0.10.2",
+  "nbformat==5.10.4",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]
+

@@ -1,0 +1,25 @@
+name: quality
+on: [push, pull_request]
+jobs:
+  catalog-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Audit pristine release tree
+        run: python scripts/11_release_audit.py --repo-root . --output /tmp/release_audit.json
+      - name: Verify bundled model artifacts
+        run: python scripts/00_verify_models.py --model-dir models/regional --prefix diting --check-companion-pt
+      - name: Install package and test dependencies
+        run: python -m pip install -e ".[test]"
+      - name: Run unit and repository tests
+        run: python -m pytest
+      - name: Validate manuscript catalog structure
+        run: python scripts/08_catalog_quality.py --repo-root . --output /tmp/catalog_quality_metrics.json --fail-on-structural-error
+      - name: Rebuild and verify 6,344-event manuscript catalog
+        run: python scripts/10_verify_manuscript_catalog.py --repo-root . --output-dir /tmp/manuscript-catalog --report /tmp/manuscript_catalog_verification.json
+      - name: Verify manifest generator
+        run: python scripts/09_write_manifest.py --repo-root . --output /tmp/SHA256SUMS

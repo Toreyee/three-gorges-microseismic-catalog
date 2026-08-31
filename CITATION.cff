@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use this software or catalog, please cite the associated article and this repository."
+title: "Three Gorges Reservoir microseismic catalog reproducibility package"
+type: software
+version: 0.3.0
+date-released: 2026-08-30
+license: GPL-3.0-only
+authors:
+  - family-names: Li
+    given-names: Xiaohan
+  - family-names: He
+    given-names: Tao
+  - family-names: Huang
+    given-names: Rong
+    email: huangrong@cug.edu.cn
+    orcid: "https://orcid.org/0000-0001-5377-9060"
+  - family-names: Ye
+    given-names: Lingling
+  - family-names: He
+    given-names: Kai
+  - family-names: Xiong
+    given-names: Yangxin
+  - family-names: Luo
+    given-names: Yinhe
+preferred-citation:
+  type: article
+  title: "Microseismic catalog construction in the Three Gorges Reservoir area using regionally adapted transfer learning and multi-model integration"
+  authors:
+    - family-names: Li
+      given-names: Xiaohan
+    - family-names: He
+      given-names: Tao
+    - family-names: Huang
+      given-names: Rong
+    - family-names: Ye
+      given-names: Lingling
+    - family-names: He
+      given-names: Kai
+    - family-names: Xiong
+      given-names: Yangxin
+    - family-names: Luo
+      given-names: Yinhe
+  journal: "Journal of Applied Geophysics"
+  status: submitted
+

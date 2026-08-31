@@ -1,0 +1,9 @@
+This repository consolidates research materials from the Three Gorges Reservoir microseismic catalog study.
+
+The CSNBench snapshot in third_party/csnbench is derived from commit d7d58f0926bbf8df4c9081e484634d6e1ecf689d and retains its upstream GPL-3.0 terms.
+
+REAL, VELEST, hypoDD and ph2dt executables are not distributed here and must be obtained from their respective upstream sources.
+
+The archived inference artifacts under models/regional/ retain their historical `diting.*` filenames: four TorchScript `.jit` checkpoints and four corresponding `.pt` files. Their SHA-256 hashes are documented in models/README.md and SHA256SUMS. These project-specific trained artifacts are distributed with the agreement of the project contributors as part of the manuscript reproducibility package.
+
+Raw continuous waveform archives are intentionally excluded from Git because of their size. The distributed data products and figure inputs are documented in the accompanying data-availability, provenance, and licensing files.

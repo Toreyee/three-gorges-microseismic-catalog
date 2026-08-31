@@ -1,0 +1,185 @@
+digraph TG_workflow_jag_final_nocolor {
+    graph [
+        rankdir=TB,
+        newrank=true,
+        splines=ortho,
+        nodesep=0.32,
+        ranksep=0.44,
+        pad=0.10,
+        bgcolor="white",
+        fontname="Helvetica"
+    ];
+
+    node [
+        shape=box,
+        style="rounded,filled",
+        fontname="Helvetica",
+        fontsize=9.8,
+        color="#6F7C87",
+        fontcolor="#24313A",
+        penwidth=0.9,
+        margin="0.11,0.08",
+        fillcolor="white"
+    ];
+
+    edge [
+        color="#6F7C87",
+        penwidth=0.95,
+        arrowsize=0.68,
+        arrowhead=normal
+    ];
+
+    a12 [shape=point, width=0.01, label="", style=invis];
+    a3  [shape=point, width=0.01, label="", style=invis];
+    a4  [shape=point, width=0.01, label="", style=invis];
+    a5  [shape=point, width=0.01, label="", style=invis];
+    a12 -> a3 -> a4 -> a5 [style=invis, weight=300];
+
+    // =========================
+    // Phase 1–2
+    // =========================
+    subgraph cluster_p12 {
+        label="Phase 1–2  Data and transfer learning";
+        labelloc="t";
+        labeljust="c";
+        fontsize=11;
+        fontname="Helvetica-Bold";
+        style="rounded,filled";
+        color="#D8DDE3";
+        fillcolor="white";
+        pencolor="#D8DDE3";
+
+        hist  [label="2013–2017 local events\nwith manual P/S picks", fillcolor="white"];
+        pre   [label="Pretrained pickers\n(EQT / RNN / Unet / LPPNL)", fillcolor="white"];
+        train [label="Region-specific\nfine-tuning", fillcolor="white"];
+        adapt [label="Adapted regional\npickers", fillcolor="white"];
+        sta   [label="22 permanent\nstations", fillcolor="white"];
+        cwf   [label="2018 continuous\nwaveforms", fillcolor="white"];
+
+        {rank=same; hist; pre}
+        {rank=same; train; adapt}
+        {rank=same; sta; cwf}
+
+        hist -> train [weight=20];
+        pre  -> train [weight=20];
+        train -> adapt [weight=20];
+
+        hist -> pre [style=invis, weight=40];
+        train -> adapt [style=invis, weight=40];
+        sta -> cwf [style=invis, weight=40];
+    }
+
+    // =========================
+    // Phase 3
+    // =========================
+    subgraph cluster_p3 {
+        label="Phase 3  Picking and association";
+        labelloc="t";
+        labeljust="c";
+        fontsize=11;
+        fontname="Helvetica-Bold";
+        style="rounded,filled";
+        color="#D8DDE3";
+        fillcolor="white";
+        pencolor="#D8DDE3";
+
+        pick  [label="Parallel phase\npicking", fillcolor="white"];
+        reala [label="REAL\nassociation", fillcolor="white"];
+        realc [label="REAL\ncatalogs", fillcolor="white"];
+
+        {rank=same; pick; reala; realc}
+        pick -> reala -> realc [weight=20];
+    }
+
+    // =========================
+    // Phase 4b
+    // =========================
+    subgraph cluster_p4b {
+        label="Phase 4b  Magnitude analysis";
+        labelloc="t";
+        labeljust="c";
+        fontsize=11;
+        fontname="Helvetica-Bold";
+        style="rounded,filled";
+        color="#D8DDE3";
+        fillcolor="white";
+        pencolor="#D8DDE3";
+
+        mag1 [label="Local-magnitude\nestimation", fillcolor="white"];
+        mag2 [label="Unified\nrecalibration", fillcolor="white"];
+        mag3 [label="MFD, Mc and\nb-value", fillcolor="white"];
+
+        {rank=same; mag1; mag2; mag3}
+        mag1 -> mag2 -> mag3 [weight=20];
+    }
+
+    // =========================
+    // Phase 4a
+    // =========================
+    subgraph cluster_p4a {
+        label="Phase 4a  Catalog construction";
+        labelloc="t";
+        labeljust="c";
+        fontsize=11;
+        fontname="Helvetica-Bold";
+        style="rounded,filled";
+        color="#D8DDE3";
+        fillcolor="white";
+        pencolor="#D8DDE3";
+
+        vel   [label="VELEST\nrelocation", fillcolor="white"];
+        hdd   [label="hypoDD\nrelocation", fillcolor="white"];
+        final [label="Final relocated\ncatalog", fillcolor="white"];
+
+        {rank=same; vel; hdd; final}
+        vel -> hdd -> final [weight=20];
+    }
+
+    // =========================
+    // Phase 5
+    // =========================
+    subgraph cluster_p5 {
+        label="Phase 5  Evaluation and interpretation";
+        labelloc="t";
+        labeljust="c";
+        fontsize=11;
+        fontname="Helvetica-Bold";
+        style="rounded,filled";
+        color="#D8DDE3";
+        fillcolor="white";
+        pencolor="#D8DDE3";
+
+        out1 [label="Picking metrics\n(Precision / Recall / F1)", fillcolor="white"];
+        out2 [label="Coverage and\ncomplementarity", fillcolor="white"];
+        out3 [label="Temporal, spatial and\ncompleteness analysis", fillcolor="white"];
+
+        out1 -> out2 [style=invis, weight=30];
+        out2 -> out3 [style=invis, weight=30];
+    }
+
+    // ---------- vertical order ----------
+    a12 -> hist [style=invis, weight=300];
+    a3  -> pick [style=invis, weight=300];
+    a4  -> mag1 [style=invis, weight=300];
+    a4  -> vel  [style=invis, weight=300];
+    a5  -> out2 [style=invis, weight=300];
+
+    // ---------- 4b left, 4a right, output right ----------
+    {rank=same; mag1; mag2; mag3; vel; hdd; final; out1}
+    mag3 -> vel [style=invis, weight=70];
+    final -> out1 [style=invis, weight=30];
+
+    // ---------- main logic ----------
+    adapt -> pick [weight=10];
+    sta   -> pick [weight=10];
+    cwf   -> pick [weight=10];
+
+    realc -> mag1 [weight=10];
+    realc -> vel  [weight=10];
+
+    // ---------- outputs do not distort layout ----------
+    adapt -> out1 [constraint=false, minlen=2];
+    realc -> out2 [constraint=false, minlen=2];
+    final -> out3 [constraint=false, minlen=2];
+    mag3  -> out3 [constraint=false, minlen=2];
+}

@@ -1,0 +1,44 @@
+{
+  "generated_at_utc": "2026-08-31T06:02:10+00:00",
+  "final_catalog": "data/final/final_catalog_6344.loc.txt",
+  "generated_catalog": "build/manuscript-catalog/final_catalog_6344.loc.txt",
+  "category_counts": {
+    "ERUL": 3867,
+    "ERU": 247,
+    "ERL": 206,
+    "EUL": 211,
+    "RUL": 64,
+    "ER": 391,
+    "EU": 141,
+    "EL": 81,
+    "RU": 43,
+    "RL": 38,
+    "UL": 90,
+    "EE": 395,
+    "RR": 298,
+    "UU": 152,
+    "LL": 120
+  },
+  "category_sum": 6344,
+  "archived_sha256": "87f4b7105ef56e0cbfedca12b43d3a8ed9ae28fba8d33d36799e58feb971fb12",
+  "generated_sha256": "87f4b7105ef56e0cbfedca12b43d3a8ed9ae28fba8d33d36799e58feb971fb12",
+  "source_model_trace_counts": {
+    "EQT": 2045,
+    "RNN": 1627,
+    "Unet": 1419,
+    "lppnl": 1253
+  },
+  "checks": {
+    "category_count_is_15": true,
+    "category_sum_is_6344": true,
+    "generated_rows_is_6344": true,
+    "archived_rows_is_6344": true,
+    "ordered_exact_match": true,
+    "set_exact_match": true,
+    "archived_sha256_matches_expected": true,
+    "generated_sha256_matches_archived": true,
+    "every_category_row_traces_to_expected_model_loc": true
+  },
+  "all_checks_pass": true,
+  "provenance_note": "This verifies deterministic reassembly of the archived 15 category products. The original program that created those category assignments from the four per-model .loc catalogs is not present in the recovered archive."
+}

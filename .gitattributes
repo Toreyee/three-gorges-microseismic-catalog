@@ -1,0 +1,32 @@
+# Portable project code/docs; preserve archived scientific inputs byte-for-byte.
+* text=auto
+*.py text eol=lf
+*.sh text eol=lf
+*.pl text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.toml text eol=lf
+*.cff text eol=lf
+*.json text eol=lf
+*.ipynb text eol=lf
+*.dot text eol=lf
+Makefile text eol=lf
+NOTICE text eol=lf
+LICENSE text eol=lf
+SHA256SUMS text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+configs/** -text
+data/** -text
+figures/data/** -text
+third_party/** -text
+workflow/velest/*.dat -text
+workflow/hypodd/*.inp -text
+*.png binary
+*.pdf binary
+*.jit binary
+*.pt binary
+*.shp binary
+*.shx binary
+*.dbf binary

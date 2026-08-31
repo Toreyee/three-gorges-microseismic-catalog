@@ -1,0 +1,2 @@
+﻿event_csv,bin_width,mc_paper_style,r2,slope_log10cum,intercept_log10cum,n_bins_fit,n_events,m_min,m_median,m_mean
+manual_recalib_eval.strict.csv,0.15,0.5249999999999988,0.985667442093952,-1.3520847127316376,4.151241371234677,13,3159,-1.5114634363235555,0.6718695011288338,0.6472268314668742
